@@ -19,26 +19,42 @@ public class Animal {
         this("ТестовоеИмя",100,LocalDate.now(),new Owner());
     }
 
+    public void toGo()
+    {
+        System.out.println(getType()+" "+name+" ToGo");
+    }
+    public void fly()
+    {
+        System.out.println(getType()+" "+name+" Fly");
+    }
+    public void swim()
+    {
+        System.out.println(getType()+" "+name+" Swim");
+    }
     private void sleep(){
-        System.out.println(name+" Sleep");
+        System.out.println(getType()+" "+name+" Sleep");
     }
     private void wakeUp(){
-        System.out.println(name+" Wake Up");
+        System.out.println(getType()+" "+name+" Wake Up");
     }
     private void wakeUp(int time){
-        System.out.println(name+" Wake Up at "+time);
+        System.out.println(getType()+" "+name+" Wake Up at "+time);
     }
     private void eat(){
-        System.out.println(name+" Eat");
+        System.out.println(getType()+" "+name+" Eat");
     }
     private void  play(){
-        System.out.println(name+" Play");
+        System.out.println(getType()+" "+name+" Play");
     }
     public void LifeCycle(){
-        wakeUp(20);
-        play();
-        eat();
-        sleep();
+        //Закомментировал, чтобы не было лишних данных в выводе
+//        wakeUp(20);
+//        play();
+//        eat();
+        toGo();
+        fly();
+        swim();
+//        sleep();
     }
     public String getName() {
         return name;
