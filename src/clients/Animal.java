@@ -3,7 +3,7 @@ package clients;
 import java.time.LocalDate;
 
 public class Animal {
-    protected String name;
+   protected String name;
     protected float weight;
     protected LocalDate age;
     protected Owner owner;
@@ -15,35 +15,30 @@ public class Animal {
         this.owner = owner;
     }
 
-    public void lifeCycle(){
-        wakeup(15.35);
-        eat();
-        sleep();
+    public Animal() {
+        this("ТестовоеИмя",100,LocalDate.now(),new Owner());
     }
+
     private void sleep(){
-        System.out.println(getType() + " is sleeping");
+        System.out.println(name+" Sleep");
     }
-    private void wakeup(){
-        System.out.println(getType() + " waked up");
+    private void wakeUp(){
+        System.out.println(name+" Wake Up");
     }
-    private void wakeup(double time){
-        System.out.println(getType() + " waked up at " + time);
+    private void wakeUp(int time){
+        System.out.println(name+" Wake Up at "+time);
     }
     private void eat(){
-        System.out.println(getType() + " is eating");
+        System.out.println(name+" Eat");
     }
-    protected void toGo(){
-        System.out.println(getType() + " to go");
+    private void  play(){
+        System.out.println(name+" Play");
     }
-    protected void swim(){
-        System.out.println(getType() + " swims");
-    }
-    protected void fly(){
-        System.out.println(getType() + " flies");
-    }
-    public String getType(){
-
-        return getClass().getSimpleName();
+    public void LifeCycle(){
+        wakeUp(20);
+        play();
+        eat();
+        sleep();
     }
     public String getName() {
         return name;
@@ -57,17 +52,16 @@ public class Animal {
     public Owner getOwner() {
         return owner;
     }
-
     public void setWeight(float weight) {
         this.weight = weight;
     }
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
-
-    public String toString(){
-
-        return String.format("name = %s, weight = %s, age = %s, owner = %s",
-                name, weight, age, owner);
+    public String toString() {
+        return String.format("name=%s, weight=%s, age=%s, owner=%s",name,weight,age,owner);
+    }
+    public String getType(){
+        return getClass().getSimpleName();
     }
 }

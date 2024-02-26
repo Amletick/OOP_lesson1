@@ -3,38 +3,29 @@ import clients.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        Lion liova = new Lion("Лёва", 45, LocalDate.of
-                (2007, 2, 3), new Owner());
-        Lion liova2 = new Lion("Далбан", 40, LocalDate.of
-                (2007, 2, 3), new Owner());
-        Cat cat1 = new Cat("murzik", 7, LocalDate.of
-                (2028, 5, 12), new Owner());
-        Eagle eagle1 = new Eagle("Орёл", 21, LocalDate.of
-                (2009, 5, 20), new Owner());
-        Fish fish1 = new Fish("бульбул", 4, LocalDate.of
-                (2023, 7,22), new Owner());
-        Human human1 = new Human("Андрей", 69, LocalDate.of
-                (1978, 10,30), new Owner());
-        WaterSnake snake1 = new WaterSnake("ssss", 5, LocalDate.of
-                (2022, 2, 2), new Owner());
-        System.out.println(liova);
-        System.out.println(liova2);
-        System.out.println(cat1);
-        System.out.println(eagle1);
-        System.out.println(fish1);
+        Lion murzilka= new Lion("Мурзилка",200, LocalDate.now(),new Owner());
+        Lion myau= new Lion("Мяу",200, LocalDate.now(),new Owner());
+        Dog bobick = new Dog("Бобик", 20, LocalDate.now(),new Owner());
+//        System.out.println(murzilka.getWeight());
+//        murzilka.setWeight(350);
+//        System.out.println(murzilka.getWeight());
+          Lion test= new Lion();
+          murzilka.LifeCycle();
+          List<Animal>animals=new ArrayList<>();
+          animals.add(murzilka);
+          animals.add(myau);
+          animals.add(bobick);
+          System.out.println(animals);
 
-        List<Animal> animals = new ArrayList<>();
-        animals.add(liova);
-        animals.add(liova2);
-        animals.add(cat1);
-        animals.add(eagle1);
-        animals.add(fish1);
-        cat1.CatLifeCycle();
-        eagle1.EagleLifeCycle();
-        fish1.FishLifeCycle();
-        snake1.SnakeLifeCycle();
+//        System.out.println(test);
+//        System.out.println(myau);
+//        System.out.println(murzilka.getType());
+
+//        System.out.println(bobick);
+//        System.out.println(bobick.getType());
     }
 }
