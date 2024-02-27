@@ -1,4 +1,4 @@
-package clients;
+package Clients;
 
 public class Owner {
     public String name;
