@@ -1,5 +1,5 @@
-package Clients;
+package Clients.Types;
 @FunctionalInterface
 public interface Swimable {
-    public void swim();
+    public double swim();
 }

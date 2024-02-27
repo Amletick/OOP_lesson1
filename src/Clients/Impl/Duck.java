@@ -1,13 +1,13 @@
 package Clients.Impl;
 
-import Clients.Animal;
-import Clients.Flyable;
-import Clients.Owner;
-import Clients.Swimable;
+import Clients.*;
+import Clients.Types.Flyable;
+import Clients.Types.Goable;
+import Clients.Types.Swimable;
 
 import java.time.LocalDate;
 
-public class Duck extends Animal implements Flyable, Swimable {
+public class Duck extends Animal implements Flyable, Goable, Swimable {
 
 
     public Duck(String name, float weight, LocalDate age, Owner owner) {
@@ -16,16 +16,22 @@ public class Duck extends Animal implements Flyable, Swimable {
 
     @Override
     public void eat() {
+        System.out.println(getType()+" "+name+" Biting");
 
     }
 
     @Override
     public double fly() {
-        return 2;
+        return 104;
     }
 
     @Override
-    public void swim() {
+    public double swim() {
+        return 10;
+    }
 
+    @Override
+    public double run() {
+        return 3;
     }
 }
