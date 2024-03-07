@@ -99,7 +99,23 @@ public class GbLinkedList <E> implements GbList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new GbLinkedListIterator();
+    }
+
+    private class GbLinkedListIterator implements Iterator<E> {
+        private Node<E> current = firstNode.getNextElement();
+
+        @Override
+        public boolean hasNext() {
+            return current != null && current != lastNode;
+        }
+
+        @Override
+        public E next() {
+            E value = current.getCurrentElement();
+            current = current.getNextElement();
+            return value;
+        }
     }
     @Override
     public String toString() {
