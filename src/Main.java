@@ -1,44 +1,70 @@
-import Clients.pharmacy.Medicine;
-import Clients.pharmacy.MedicineComponent;
-import Clients.pharmacy.impl.*;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import gb_collections.GbList;
+import gb_collections.List.GbArrayList;
+import gb_collections.List.GbLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        MedicineComponent asitron = new Asitromin("Азитро", 40, 60);
-        MedicineComponent penicilinium = new Penicilinium("Пеницилиниум", 30, 9999);
-        MedicineComponent vetbicid = new Vetbicid("Ветбицит", 40, 90);
-        MedicineComponent water = new Water("Вода", 40, 10);
-        MedicineComponent vetc = new VetC("ВетС", 40, 50);
-        MedicineComponent veta = new VetA("ВетА", 40, 95);
-        MedicineComponent vetb = new VetB("ВетB", 40, 10);
-        MedicineComponent vetd = new VetD("ВетD", 40, 60);
-        Medicine med1 = new Medicine();
-        med1.addComponent(asitron).addComponent(vetbicid).addComponent(vetc);
-        Medicine med2 = new Medicine();
-        med2.addComponent(penicilinium).addComponent(water).addComponent(veta);
-        Medicine med3 = new Medicine();
-        med3.addComponent(vetb).addComponent(vetd).addComponent(vetc);
-        ArrayList<Medicine> med123List= new ArrayList<>();
-        med123List.add(med1);
-        med123List.add(med2);
-        med123List.add(med3);
-        // Проверка что compareTo работает(выводится -1, т.к. у Пеницилиниума 9999 power)
-        System.out.println(med123List.get(0).compareTo(med123List.get(1)));
-        System.out.println(med123List.get(1).getSumPower());
-        for (Medicine medicine : med123List) {
-            System.out.println(medicine);
-        }
-        //По возрастанию
-       Collections.sort(med123List,(medic1,medic2)->(int)(medic1.getSumPower()-medic2.getSumPower()));
-        System.out.println("Отсортировано:");
+        GbList<Integer> list= new GbLinkedList<>();
+        list.add(56);
+        list.add(23);
+        list.add(78);
+        list.add(615);
+        System.out.println(list.getSize());
+        System.out.println(list);
+        list.removeByValue(748);
+        list.removeByValue(78);//не найдём
+        list.removeByIndex(1);
+        System.out.println(list);
+        System.out.println(list.getSize());
+        list.add(23);
+        list.add(78);
+        list.add(615);
+        list.addByIndex(3,46);
+        System.out.println(list);
+        System.out.println(list.getSize());
+        System.out.println("Проверка ArrayList");
+        GbList<Integer> array= new GbArrayList<>();
+        array.add(56);
+        array.add(23);
+        array.add(78);
+        array.add(615);
+        System.out.println(array.getSize());
+        System.out.println(array);
+        array.addByIndex(3,999);
+        System.out.println(array.getSize());
+        System.out.println(array);
 
-        for (Medicine medicine : med123List) {
-            System.out.println(medicine);
-        }
+//        MedicineComponent asitron = new Asitromin("Азитро", 40, 60);
+//        MedicineComponent penicilinium = new Penicilinium("Пеницилиниум", 30, 9999);
+//        MedicineComponent vetbicid = new Vetbicid("Ветбицит", 40, 90);
+//        MedicineComponent water = new Water("Вода", 40, 10);
+//        MedicineComponent vetc = new VetC("ВетС", 40, 50);
+//        MedicineComponent veta = new VetA("ВетА", 40, 95);
+//        MedicineComponent vetb = new VetB("ВетB", 40, 10);
+//        MedicineComponent vetd = new VetD("ВетD", 40, 60);
+//        Medicine med1 = new Medicine();
+//        med1.addComponent(asitron).addComponent(vetbicid).addComponent(vetc);
+//        Medicine med2 = new Medicine();
+//        med2.addComponent(penicilinium).addComponent(water).addComponent(veta);
+//        Medicine med3 = new Medicine();
+//        med3.addComponent(vetb).addComponent(vetd).addComponent(vetc);
+//        ArrayList<Medicine> med123List= new ArrayList<>();
+//        med123List.add(med1);
+//        med123List.add(med2);
+//        med123List.add(med3);
+//        // Проверка что compareTo работает(выводится -1, т.к. у Пеницилиниума 9999 power)
+//        System.out.println(med123List.get(0).compareTo(med123List.get(1)));
+//        System.out.println(med123List.get(1).getSumPower());
+//        for (Medicine medicine : med123List) {
+//            System.out.println(medicine);
+//        }
+//        //По возрастанию
+//       Collections.sort(med123List,(medic1,medic2)->(int)(medic1.getSumPower()-medic2.getSumPower()));
+//        System.out.println("Отсортировано:");
+//
+//        for (Medicine medicine : med123List) {
+//            System.out.println(medicine);
+//        }
 
 //        Collections.sort(medList,(comp1,comp2)->(int)(comp1.getWeight() - comp2.getWeight()));
 //        Medicine2 medicine1 = new Medicine2();
