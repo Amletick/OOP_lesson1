@@ -13,7 +13,7 @@ public class Main {
         System.out.println(list);
         list.removeByValue(748);
         list.removeByValue(78);//не найдём
-        list.removeByIndex(1);
+        list.removeByIndex(2);
         System.out.println(list);
         System.out.println(list.getSize());
         list.add(23);
